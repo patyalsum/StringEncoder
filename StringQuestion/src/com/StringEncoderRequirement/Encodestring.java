@@ -23,12 +23,15 @@ public class Encodestring {
 			}
 			
 			//for lowercase characters
-			if(str.charAt(i)>='a' && str.charAt(i)<='z')
+			else if(str.charAt(i)>='a' && str.charAt(i)<='z')
 			{
 				new_ascii= 122-(ascii-97);				
 				eachcharacter=(char) new_ascii;
 				//System.out.print(eachcharacter);
 				encoderchararr[i]=eachcharacter;
+			}else
+			{
+				encoderchararr[i]=',';
 			}
 				
 				
@@ -42,10 +45,10 @@ public class Encodestring {
 	
 	public static void main(String[] args) {
 		
-		String str="acp";
+		String str="acp23, w";
 		String result=stringEncoder(str);
 		
-		String encodedresult=result.replaceAll("","");
+		String encodedresult=result.replaceAll(",","");
 		System.out.println(encodedresult); 
 		
 	}
